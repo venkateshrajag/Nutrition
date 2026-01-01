@@ -1,0 +1,57 @@
+{
+  "auth": {
+    "identityProviders": {
+      "google": {
+        "registration": {
+          "openIdConnectConfiguration": {
+            "wellKnownOpenIdConfiguration": "https://accounts.google.com/.well-known/openid-configuration"
+          }
+        }
+      }
+    }
+  },
+  "routes": [
+    {
+      "route": "/admin/*",
+      "allowedRoles": ["admin"]
+    },
+    {
+      "route": "/api/admin/*",
+      "allowedRoles": ["admin"]
+    },
+    {
+      "route": "/app/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/.auth/login/google",
+      "rewrite": "/.auth/login/google"
+    },
+    {
+      "route": "/login",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/*",
+      "rewrite": "/index.html"
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
+    }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  }
+}
