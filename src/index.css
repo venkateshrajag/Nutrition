@@ -1,10 +1,60 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Indian Color Palette */
+  --saffron-orange: #FF9933;
+  --deep-orange: #E67E22;
+  --golden-yellow: #F39C12;
+  --rich-red: #C0392B;
+  --warm-brown: #8B4513;
+  --cream-beige: #FFF8DC;
+  --warm-gray: #F5F5DC;
+  --dark-brown: #3E2723;
+  --light-saffron: #FFB366;
+  --deep-saffron: #CC7A29;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, var(--warm-gray) 0%, var(--cream-beige) 100%);
+  color: var(--dark-brown);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Decorative border pattern */
+.decorative-border {
+  border-top: 3px solid var(--saffron-orange);
+  border-bottom: 3px solid var(--golden-yellow);
+  position: relative;
+}
+
+.decorative-border::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--rich-red) 20%, 
+    var(--saffron-orange) 40%, 
+    var(--golden-yellow) 60%, 
+    var(--saffron-orange) 80%, 
+    transparent 100%
+  );
+}
+
+/* Subtle pattern background */
+.pattern-bg {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 153, 51, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(243, 156, 18, 0.03) 0%, transparent 50%);
 }

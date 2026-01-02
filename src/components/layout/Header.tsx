@@ -6,7 +6,10 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="bg-white shadow-sm">
+      <header style={{
+        background: 'linear-gradient(135deg, #FF9933 0%, #E67E22 50%, #F39C12 100%)',
+        boxShadow: '0 4px 6px rgba(139, 69, 19, 0.1)'
+      }} className="decorative-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo/Brand */}
@@ -14,28 +17,28 @@ const Header: React.FC = () => {
               <img
                 src="/images/logo.jpg"
                 alt="Saffron Suvai Logo"
-                className="h-10 w-10 rounded-full object-cover"
+                className="h-10 w-10 rounded-full object-cover ring-2 ring-white shadow-md"
               />
-              <h1 className="text-xl font-semibold text-gray-800">Saffron Suvai</h1>
+              <h1 className="text-xl font-semibold text-white drop-shadow-md">Saffron Suvai</h1>
             </div>
 
             {/* Navigation Menu */}
             <nav className="hidden md:flex space-x-8">
               <a
                 href="/"
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
               >
                 Home
               </a>
               <a
                 href="/about"
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
               >
                 About
               </a>
               <a
                 href="/features"
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
               >
                 Features
               </a>
@@ -50,16 +53,16 @@ const Header: React.FC = () => {
                       <img
                         src={user.user_metadata.avatar_url}
                         alt={user.user_metadata?.name || 'User'}
-                        className="h-8 w-8 rounded-full"
+                        className="h-8 w-8 rounded-full ring-2 ring-white"
                       />
                     )}
-                    <span className="text-sm text-gray-700 hidden md:block">
+                    <span className="text-sm text-white font-medium hidden md:block drop-shadow">
                       {user.user_metadata?.name || user.email}
                     </span>
                   </div>
                   <button
                     onClick={signOut}
-                    className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                    className="inline-flex items-center px-4 py-2 border-2 border-white text-sm font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all shadow-md"
                   >
                     Logout
                   </button>
@@ -67,7 +70,7 @@ const Header: React.FC = () => {
               ) : (
                 <button
                   onClick={signInWithGoogle}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                  className="inline-flex items-center px-4 py-2 border-2 border-white text-sm font-medium rounded-md text-orange-600 bg-white hover:bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all shadow-md"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -91,19 +94,19 @@ const Header: React.FC = () => {
           <div className="flex flex-col space-y-1">
             <a
               href="/"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+              className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
             >
               Home
             </a>
             <a
               href="/about"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+              className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
             >
               About
             </a>
             <a
               href="/features"
-              className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+              className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
             >
               Features
             </a>
