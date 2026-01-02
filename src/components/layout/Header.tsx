@@ -11,8 +11,13 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
-          <div className="flex items-center">
-            <h1 className="text-xl font-semibold text-gray-800">Nutrition App</h1>
+          <div className="flex items-center space-x-3">
+            <img
+              src="/images/logo.jpg"
+              alt="Saffron Suvai Logo"
+              className="h-10 w-10 rounded-full object-cover"
+            />
+            <h1 className="text-xl font-semibold text-gray-800">Saffron Suvai</h1>
           </div>
 
           {/* Navigation Menu */}
