@@ -1,4 +1,4 @@
-# Nutrition App
+# Nutrition App = Saffron - Suvai
 
 A minimalistic nutrition app with Google OAuth authentication, built with React, TypeScript, and Tailwind CSS.
 
