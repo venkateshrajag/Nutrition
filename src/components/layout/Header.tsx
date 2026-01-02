@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header: React.FC = () => {
   const handleLogin = () => {
-    // Redirect to Azure Static Web Apps Google OAuth endpoint
-    window.location.href = '/.auth/login/google';
+    // TODO: Implement Google OAuth (Firebase Auth or NextAuth.js)
+    alert('Google login will be configured after deployment!');
   };
 
   return (
