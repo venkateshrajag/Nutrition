@@ -1,12 +1,20 @@
 import { useEffect, useState } from 'react';
 import { User } from '@supabase/supabase-js';
-import { supabase } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Check if Supabase is configured
+    if (!isSupabaseConfigured()) {
+      setError('Supabase is not configured. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY environment variables.');
+      setLoading(false);
+      return;
+    }
+
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
@@ -24,6 +32,10 @@ export function useAuth() {
   }, []);
 
   const signInWithGoogle = async () => {
+    if (!isSupabaseConfigured()) {
+      console.error('Supabase is not configured');
+      return;
+    }
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
@@ -34,6 +46,10 @@ export function useAuth() {
   };
 
   const signOut = async () => {
+    if (!isSupabaseConfigured()) {
+      console.error('Supabase is not configured');
+      return;
+    }
     const { error } = await supabase.auth.signOut();
     if (error) console.error('Error logging out:', error.message);
   };
@@ -41,6 +57,7 @@ export function useAuth() {
   return {
     user,
     loading,
+    error,
     signInWithGoogle,
     signOut,
   };
