@@ -46,7 +46,7 @@ const WeeklyCalendar: React.FC<WeeklyCalendarProps> = ({
                 {mealTypes.map((mealType) => (
                     <div key={mealType} className="mb-4">
                         <div className="grid grid-cols-7 gap-2">
-                            {weekDates.map((date, dayIndex) => {
+                            {weekDates.map((_, dayIndex) => {
                                 const dayMeals = weekMeals[dayIndex] || { breakfast: null, lunch: null, dinner: null };
                                 const mealPlan = dayMeals[mealType];
                                 const recipe = mealPlan?.recipe || null;
