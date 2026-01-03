@@ -1,142 +1,282 @@
-# Nutrition App = Saffron - Suvai
+# Saffron Suvai - Indian Nutrition App
 
-A minimalistic nutrition app with Google OAuth authentication, built with React, TypeScript, and Tailwind CSS.
+A personalized nutrition companion featuring Indian recipes, nutrition surveys, and AI-powered feedback. Built with React, TypeScript, and Supabase, with a beautiful Indian-themed design.
 
-## Features
+![Saffron Suvai](public/images/logo.jpg)
 
-- Clean, minimalistic design with top menu bar
-- Google OAuth authentication integration
-- Responsive layout for desktop and mobile
-- Built with modern tech stack (React 18, TypeScript, Vite, Tailwind CSS)
-- Ready for Azure Static Web Apps deployment
+## ✨ Features
 
-## Project Structure
+### 🔐 Authentication
+- **Google OAuth** integration via Supabase Auth
+- Automatic user profile creation
+- Secure session management with Row Level Security (RLS)
 
-```
-nutrition-app/
-├── src/
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.tsx       # Top menu bar with login button
-│   │   │   └── Layout.tsx       # Main layout wrapper
-│   │   └── auth/                # Auth components (future)
-│   ├── App.tsx                  # Main app component
-│   ├── main.tsx                 # App entry point
-│   └── index.css                # Tailwind CSS imports
-├── staticwebapp.config.json     # Azure SWA configuration with Google OAuth
-├── index.html
-├── vite.config.ts
-├── tailwind.config.js
-└── package.json
-```
+### 📊 Nutrition Survey
+- **9-question comprehensive survey** covering:
+  - Age, weight, height
+  - Activity level
+  - Dietary restrictions and preferences
+  - Health goals
+  - Meal frequency and water intake
+  - Food allergies
+- Multi-step wizard with progress tracking
+- Real-time validation
+- Beautiful Indian-themed UI
 
-## Getting Started
+### 💡 Personalized Feedback
+- **BMR (Basal Metabolic Rate)** calculation using Mifflin-St Jeor equation
+- **TDEE (Total Daily Energy Expenditure)** based on activity level
+- **Target calorie recommendations** aligned with health goals
+- **Macro distribution** (protein, carbs, fat) with visual charts
+- **Prioritized recommendations** based on survey responses
+- Automatic feedback generation and storage
+
+### 🥗 Indian Recipe Cookbook
+- **14 authentic Indian recipes** with complete nutrition data
+- Categories: Breakfast, Lunch, Dinner
+- **Advanced filtering**:
+  - Search by recipe name or ingredients
+  - Filter by category
+  - Filter by dietary tags (vegetarian, vegan, high-protein, etc.)
+- **Detailed recipe view** with:
+  - Complete nutrition facts
+  - Ingredients list
+  - Step-by-step instructions
+  - Prep and cook times
+  - Source links
+
+### 🎨 Indian-Themed Design
+- Warm saffron, orange, and cream color palette
+- Traditional Indian design patterns
+- Responsive layout for all devices
+- Smooth animations and transitions
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 18+ installed
-- npm or yarn package manager
+- Supabase account ([supabase.com](https://supabase.com))
+- Google Cloud project for OAuth
 
 ### Installation
 
-1. Install dependencies:
+1. **Clone the repository**:
+```bash
+git clone <your-repo-url>
+cd Nutrition
+```
+
+2. **Install dependencies**:
 ```bash
 npm install
 ```
 
-2. Start the development server:
+3. **Set up environment variables**:
+
+Create a `.env.local` file in the root directory:
+
+```env
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+4. **Set up Supabase**:
+
+Run the SQL migrations in your Supabase SQL Editor:
+- `supabase/migrations/001_initial_schema.sql` - Creates tables and RLS policies
+- `supabase/migrations/002_seed_recipes.sql` - Imports 14 recipes
+
+5. **Configure Google OAuth in Supabase**:
+   - Go to Supabase Dashboard → Authentication → Providers
+   - Enable Google provider
+   - Add your Google Client ID and Secret
+   - Add authorized redirect URL: `http://localhost:5173/auth/callback` (for development)
+
+6. **Start the development server**:
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:5173](http://localhost:5173) in your browser
+7. Open [http://localhost:5173](http://localhost:5173) in your browser
 
-### Build for Production
+## 📁 Project Structure
 
-```bash
-npm run build
+```
+Nutrition/
+├── src/
+│   ├── components/
+│   │   ├── auth/
+│   │   │   └── ProtectedRoute.tsx      # Route protection wrapper
+│   │   ├── cookbook/
+│   │   │   ├── RecipeCard.tsx          # Recipe card component
+│   │   │   ├── RecipeDetail.tsx        # Recipe detail modal
+│   │   │   ├── RecipeFilters.tsx       # Filter controls
+│   │   │   └── RecipeList.tsx          # Main cookbook page
+│   │   ├── feedback/
+│   │   │   ├── FeedbackDisplay.tsx     # Feedback dashboard
+│   │   │   └── MacroChart.tsx          # Macro distribution chart
+│   │   ├── layout/
+│   │   │   ├── Header.tsx              # Navigation header
+│   │   │   └── Layout.tsx              # Page layout wrapper
+│   │   └── survey/
+│   │       ├── ProgressBar.tsx         # Survey progress indicator
+│   │       ├── SurveyForm.tsx          # Main survey component
+│   │       └── SurveyQuestion.tsx      # Individual question component
+│   ├── hooks/
+│   │   └── useAuth.ts                  # Authentication hook
+│   ├── lib/
+│   │   └── supabase.ts                 # Supabase client
+│   ├── pages/
+│   │   └── AuthCallback.tsx            # OAuth callback handler
+│   ├── types/
+│   │   ├── recipe.ts                   # Recipe type definitions
+│   │   └── survey.ts                   # Survey type definitions
+│   ├── utils/
+│   │   └── nutritionCalculations.ts    # BMR/TDEE/Feedback logic
+│   ├── App.tsx                         # Main app with routing
+│   ├── main.tsx                        # App entry point
+│   └── index.css                       # Global styles + Indian theme
+├── supabase/
+│   └── migrations/
+│       ├── 001_initial_schema.sql      # Database schema
+│       └── 002_seed_recipes.sql        # Recipe data
+├── assets/
+│   ├── recipes.json                    # Recipe data (JSON)
+│   └── implementation_plan.md          # Development plan
+└── public/
+    └── images/
+        └── logo.jpg                    # App logo
 ```
 
-The production build will be in the `dist` folder.
+## 🗄️ Database Schema
 
-## Google OAuth Setup
+### Tables
 
-The app is configured to work with Azure Static Web Apps Google OAuth. To enable authentication:
+- **users** - User profiles linked to Supabase Auth
+- **surveys** - User survey responses
+- **feedback** - Generated nutrition feedback
+- **recipes** - Indian recipe collection
 
-1. Create a Google Cloud Project at [Google Cloud Console](https://console.cloud.google.com/)
-2. Enable Google+ API
-3. Create OAuth 2.0 credentials
-4. Set authorized redirect URI to: `https://<your-swa-domain>/.auth/login/google/callback`
-5. Configure the credentials in Azure Portal → Static Web App → Configuration → Identity providers
+All tables have Row Level Security (RLS) policies to ensure data privacy.
 
-## Deployment to Azure Static Web Apps
+## 🎯 User Flow
 
-### Using Azure CLI
+1. **Landing Page** → User sees welcome page with app features
+2. **Login** → User authenticates with Google OAuth
+3. **Auth Callback** → User profile created, redirected based on survey status
+4. **Survey** (first-time users) → Complete 9-question nutrition survey
+5. **Dashboard** → View personalized nutrition plan with:
+   - BMR, TDEE, and target calories
+   - Macro distribution chart
+   - Prioritized recommendations
+6. **Cookbook** → Browse and filter 14 Indian recipes
+7. **Recipe Detail** → View complete recipe with nutrition info
 
-```bash
-# Login to Azure
-az login
+## 🚢 Deployment to Vercel
 
-# Create a resource group
-az group create --name rg-nutrition-app --location eastus
+### Environment Variables
 
-# Create Static Web App
-az staticwebapp create \
-  --name swa-nutrition-app \
-  --resource-group rg-nutrition-app \
-  --source https://github.com/YOUR_USERNAME/nutrition-app \
-  --location eastus2 \
-  --branch main \
-  --app-location "/" \
-  --api-location "api" \
-  --output-location "dist" \
-  --login-with-github
+Set these in Vercel Dashboard → Settings → Environment Variables:
+
+```
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-### Manual Deployment
+### Google OAuth Setup for Production
 
-1. Push your code to a GitHub repository
-2. Go to Azure Portal → Create a resource → Static Web App
-3. Connect your GitHub repository
-4. Set build configuration:
-   - App location: `/`
-   - API location: `api` (for future API functions)
-   - Output location: `dist`
-5. Azure will automatically deploy on every push to main branch
+1. In Google Cloud Console, add your Vercel domain to authorized redirect URIs:
+   ```
+   https://your-app.vercel.app/auth/callback
+   ```
 
-## Configuration
+2. In Supabase Dashboard → Authentication → URL Configuration:
+   - Add your Vercel URL to "Site URL"
+   - Add redirect URL to "Redirect URLs"
 
-The `staticwebapp.config.json` file contains:
-- Google OAuth configuration
-- Route protection rules
-- Security headers
-- Redirect rules for authentication
+### Deploy
 
-## Tech Stack
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-- **Frontend**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **Authentication**: Azure Static Web Apps + Google OAuth
-- **Hosting**: Azure Static Web Apps
+# Deploy
+vercel
 
-## Available Scripts
+# Or connect your GitHub repo to Vercel for automatic deployments
+```
 
-- `npm run dev` - Start development server
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS + Custom Indian Theme
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth + Google OAuth
+- **Hosting**: Vercel
+- **State Management**: React Hooks
+- **Routing**: React Router v6
+
+## 📊 Nutrition Calculations
+
+### BMR (Basal Metabolic Rate)
+Uses the Mifflin-St Jeor equation:
+```
+BMR = 10 × weight(kg) + 6.25 × height(cm) - 5 × age + offset
+```
+
+### TDEE (Total Daily Energy Expenditure)
+```
+TDEE = BMR × Activity Multiplier
+```
+
+Activity multipliers:
+- Sedentary: 1.2
+- Light: 1.375
+- Moderate: 1.55
+- Active: 1.725
+- Very Active: 1.9
+
+### Target Calories
+- Weight loss: TDEE - 500 cal
+- Weight gain/Muscle gain: TDEE + 300 cal
+- Maintenance: TDEE
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: Saffron Orange (#FF9933)
+- **Secondary**: Deep Orange (#E67E22)
+- **Accent**: Golden Yellow (#F39C12)
+- **Warm**: Rich Red (#C0392B)
+- **Neutral**: Warm Brown (#8B4513)
+- **Background**: Cream/Beige (#FFF8DC, #FFE5CC)
+
+### Typography
+- **Headings**: Poppins (Google Fonts)
+- **Body**: Inter (Google Fonts)
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server (port 5173)
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
 
-## Next Steps
+## 🔒 Security
 
-According to the specification, the following features will be added:
-- User access control (domain and email allowlist)
-- Survey system for user profiles
-- Personalized feedback generation
-- Admin panel
-- Cookbook module with recipes
-- Azure Functions API backend
-- Cosmos DB integration
+- Row Level Security (RLS) on all Supabase tables
+- Protected routes require authentication
+- User data isolated by user ID
+- Secure OAuth flow with Supabase Auth
 
-## License
+## 🤝 Contributing
+
+This is a personal project, but suggestions and feedback are welcome!
+
+## 📄 License
 
 ISC
+
+---
+
+**Built with ❤️ and 🌶️ spices**

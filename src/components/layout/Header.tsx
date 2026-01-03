@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
 const Header: React.FC = () => {
-  const { user, error, signInWithGoogle, signOut } = useAuth();
+  const { user, userProfile, error, signInWithGoogle, signOut } = useAuth();
 
   return (
     <>
@@ -30,18 +30,28 @@ const Header: React.FC = () => {
               >
                 Home
               </a>
-              <a
-                href="/about"
-                className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
-              >
-                About
-              </a>
-              <a
-                href="/features"
-                className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
-              >
-                Features
-              </a>
+              {user && (
+                <>
+                  <a
+                    href="/dashboard"
+                    className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
+                  >
+                    Dashboard
+                  </a>
+                  <a
+                    href="/cookbook"
+                    className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
+                  >
+                    Cookbook
+                  </a>
+                  <a
+                    href="/survey"
+                    className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
+                  >
+                    Survey
+                  </a>
+                </>
+              )}
             </nav>
 
             {/* Auth Section */}
@@ -49,15 +59,15 @@ const Header: React.FC = () => {
               {user ? (
                 <>
                   <div className="flex items-center space-x-3">
-                    {user.user_metadata?.avatar_url && (
+                    {userProfile?.picture && (
                       <img
-                        src={user.user_metadata.avatar_url}
-                        alt={user.user_metadata?.name || 'User'}
+                        src={userProfile.picture}
+                        alt={userProfile.name || 'User'}
                         className="h-8 w-8 rounded-full ring-2 ring-white"
                       />
                     )}
                     <span className="text-sm text-white font-medium hidden md:block drop-shadow">
-                      {user.user_metadata?.name || user.email}
+                      {userProfile?.name || userProfile?.email || user.email}
                     </span>
                   </div>
                   <button
@@ -89,7 +99,7 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile menu button (for future implementation) */}
+        {/* Mobile menu */}
         <div className="md:hidden px-4 pb-3 pt-2">
           <div className="flex flex-col space-y-1">
             <a
@@ -98,18 +108,28 @@ const Header: React.FC = () => {
             >
               Home
             </a>
-            <a
-              href="/about"
-              className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
-            >
-              About
-            </a>
-            <a
-              href="/features"
-              className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
-            >
-              Features
-            </a>
+            {user && (
+              <>
+                <a
+                  href="/dashboard"
+                  className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
+                >
+                  Dashboard
+                </a>
+                <a
+                  href="/cookbook"
+                  className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
+                >
+                  Cookbook
+                </a>
+                <a
+                  href="/survey"
+                  className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
+                >
+                  Survey
+                </a>
+              </>
+            )}
           </div>
         </div>
       </header>

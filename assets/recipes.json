@@ -1,0 +1,575 @@
+[
+    {
+        "title": "Moong Dal Idli",
+        "category": "breakfast",
+        "prepTime": 35,
+        "cookTime": 10,
+        "calories": 90,
+        "protein": 7,
+        "carbs": 8,
+        "fat": 4,
+        "fiber": 1,
+        "ingredients": [
+            "Moong dal (1 cup)",
+            "Oil (2 tbsp)",
+            "Mustard seeds (1 tsp)",
+            "Chana dal (½ tsp)",
+            "Urad dal (½ tsp)",
+            "Cumin seeds (1 tsp)",
+            "Hing (pinch)",
+            "Curry leaves",
+            "Ginger (1 inch)",
+            "Green chilli (3)",
+            "Carrot (2 tbsp grated)",
+            "Turmeric (¼ tsp)",
+            "Rava coarse (1 cup)",
+            "Curd (1 cup)",
+            "Salt (1 tsp)",
+            "Coriander (2 tbsp)",
+            "Eno (1 tsp)",
+            "Cashew for garnish"
+        ],
+        "instructions": [
+            "Soak moong dal for 2 hours",
+            "Grind with curd to make batter",
+            "Temper oil with mustard, cumin, dals, curry leaves",
+            "Add ginger, chilli, carrot, turmeric",
+            "Roast rava till aromatic",
+            "Mix into batter and rest for 20 mins",
+            "Add eno and coriander",
+            "Steam for 10 mins with cashew garnish"
+        ],
+        "dietaryTags": [
+            "vegetarian"
+        ],
+        "sourceLink": "https://hebbarskitchen.com/moong-dal-idli-recipe/"
+    },
+    {
+        "title": "Quinoa Upma + Greek Yogurt",
+        "category": "breakfast",
+        "prepTime": 5,
+        "cookTime": 15,
+        "calories": 496,
+        "protein": 31,
+        "carbs": 63,
+        "fat": 14,
+        "fiber": 9,
+        "ingredients": [
+            "Quinoa (1 cup)",
+            "Oil (1½ tbsp)",
+            "Mustard seeds (¼ tsp)",
+            "Cumin seeds (½ tsp)",
+            "Chana dal (1 tbsp)",
+            "Urad dal (½ tsp)",
+            "Cashews (12-15)",
+            "Curry leaves (1 sprig)",
+            "Onion (⅓ cup)",
+            "Ginger (½ tsp)",
+            "Green chili (1-2)",
+            "Carrot (½ cup)",
+            "Green beans (¼ cup)",
+            "Green peas (¼ cup)",
+            "Salt (⅓ tsp)",
+            "Turmeric (¼ tsp)",
+            "Lemon juice",
+            "Oikos Greek Yogurt 0% (1 cup/175g)"
+        ],
+        "instructions": [
+            "Rinse quinoa well",
+            "Heat oil, add mustard, cumin, chana dal, urad dal and cashews",
+            "Add curry leaves, ginger, chilies, onion",
+            "Sauté vegetables",
+            "Add turmeric, salt and quinoa",
+            "Pour water and cook until absorbed",
+            "Add lemon juice",
+            "Serve with 1 cup Oikos Greek Yogurt"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "high-protein"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/quinoa-upma/"
+    },
+    {
+        "title": "Medu Vada + Greek Yogurt",
+        "category": "breakfast",
+        "prepTime": 30,
+        "cookTime": 15,
+        "calories": 228,
+        "protein": 22,
+        "carbs": 16,
+        "fat": 7,
+        "fiber": 2,
+        "ingredients": [
+            "Urad dal (1 cup)",
+            "Salt (⅓ tsp)",
+            "Ice cold water",
+            "Oil for frying",
+            "Black pepper crushed (¼-½ tsp, optional)",
+            "Green chilli (2-3, optional)",
+            "Ginger (1 tsp, optional)",
+            "Curry leaves (1 sprig, optional)",
+            "Cumin seeds (½ tsp, optional)",
+            "Onion (4 tbsp, optional)",
+            "Oikos Greek Yogurt 0% (1 cup/175g)"
+        ],
+        "instructions": [
+            "Soak urad dal for 4-5 hours",
+            "Grind to thick fluffy batter with salt and ice water",
+            "Beat to aerate",
+            "Optional: add pepper, ginger, chilli, curry leaves, cumin, onion",
+            "Shape into doughnuts",
+            "Deep fry on medium flame till golden",
+            "Serve with 1 cup Oikos Greek Yogurt"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "high-protein"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/medu-vada-recipe/"
+    },
+    {
+        "title": "Cottage Cheese Uttapam",
+        "category": "breakfast",
+        "prepTime": 30,
+        "cookTime": 20,
+        "calories": 355,
+        "protein": 25,
+        "carbs": 58,
+        "fat": 2,
+        "fiber": 10,
+        "ingredients": [
+            "Mung dal (¼ cup)",
+            "Urad dal (¼ cup)",
+            "Basmati rice (¼ cup)",
+            "Fenugreek seeds (¼ tsp, optional)",
+            "Cottage cheese low-fat (¾ cup)",
+            "Water (½ cup for grinding + soaking)",
+            "Cumin seeds (½ tsp)",
+            "Ginger (1-inch)",
+            "Green chilli (1)",
+            "Salt (1 tsp)",
+            "Baking soda (¼ tsp)",
+            "Onion (1 small, diced)",
+            "Tomato (1, diced)",
+            "Cilantro (¼ cup)"
+        ],
+        "instructions": [
+            "Soak mung dal, urad dal, rice and fenugreek for 30 mins or overnight",
+            "Blend with cottage cheese, water, cumin, ginger, chilli and salt to smooth batter",
+            "Stir in baking soda",
+            "Spread on greased hot pan",
+            "Top with onion, tomato, cilantro",
+            "Cook both sides till golden"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "high-protein"
+        ],
+        "sourceLink": "https://ministryofcurry.com/cottage-cheese-uttapam/"
+    },
+    {
+        "title": "Egg Biryani + Greek Yogurt",
+        "category": "lunch",
+        "prepTime": 45,
+        "cookTime": 30,
+        "calories": 700,
+        "protein": 34,
+        "carbs": 94,
+        "fat": 19,
+        "fiber": 4,
+        "ingredients": [
+            "Basmati rice (2 cups)",
+            "Coconut oil (3 tbsp)",
+            "Ginger garlic paste (1 tbsp)",
+            "Onion (1 cup)",
+            "Green chilli (1-2)",
+            "Boiled eggs (4-5)",
+            "Tomato (1)",
+            "Turmeric (¼ tsp)",
+            "Red chilli powder (1 tsp)",
+            "Garam/biryani masala (1 tbsp)",
+            "Mint/coriander (¼ cup)",
+            "Yogurt (6 tbsp)",
+            "Salt (1+ tsp)",
+            "Water (3.75-4 cups)",
+            "Star anise (1)",
+            "Bay leaf (1)",
+            "Cumin seeds (½ tsp)",
+            "Cardamom (4)",
+            "Cloves (4)",
+            "Cinnamon (1 inch)",
+            "Oikos Greek Yogurt 0% (1 cup/175g)"
+        ],
+        "instructions": [
+            "Soak rice for 20-30 mins",
+            "Boil eggs",
+            "Temper coconut oil with whole spices",
+            "Fry onion, chilli, ginger garlic",
+            "Cook tomato, yogurt, spices, mint",
+            "Add eggs and biryani masala",
+            "Boil water with salt, add soaked rice",
+            "Pressure cook 1 whistle or Instant Pot 5 mins",
+            "Serve with 1 cup Oikos Greek Yogurt"
+        ],
+        "dietaryTags": [
+            "high-protein"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/egg-biryani/"
+    },
+    {
+        "title": "Dal Vada",
+        "category": "lunch",
+        "prepTime": 25,
+        "cookTime": 15,
+        "calories": 90,
+        "protein": 6,
+        "carbs": 16,
+        "fat": 1,
+        "fiber": 7,
+        "ingredients": [
+            "Moong dal (¾ cup)",
+            "Chana dal (¼ cup)",
+            "Urad dal (2 tbsp)",
+            "Garam masala (½-¾ tsp)",
+            "Ginger garlic paste (1½ tsp)",
+            "Onion (1)",
+            "Green chilli (2-3)",
+            "Red chilli (2, optional)",
+            "Curry leaves (2 sprigs)",
+            "Coriander (3 tbsp)",
+            "Cumin seeds (½ tsp)",
+            "Salt (½-¾ tsp)",
+            "Oil for frying"
+        ],
+        "instructions": [
+            "Soak dals for 2 hours",
+            "Grind coarse, keeping some whole",
+            "Mix with onion, ginger garlic, garam masala, cumin, chilli, curry/coriander leaves and salt",
+            "Shape into flat balls",
+            "Deep fry or air fry 15-17 mins at 360°F"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "vegan"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/dal-vada-recipe/"
+    },
+    {
+        "title": "Besan Chilla",
+        "category": "lunch",
+        "prepTime": 15,
+        "cookTime": 10,
+        "calories": 124,
+        "protein": 7,
+        "carbs": 18,
+        "fat": 2,
+        "fiber": 3,
+        "ingredients": [
+            "Besan/chickpea flour (1 cup)",
+            "Ajwain/carom seeds (½ tsp)",
+            "Salt (⅓-½ tsp)",
+            "Turmeric (⅛ tsp)",
+            "Onion (3 tbsp)",
+            "Tomato (3 tbsp)",
+            "Green chilli (1)",
+            "Ginger (1 tsp)",
+            "Coriander (handful)",
+            "Water (⅔-1 cup)",
+            "Oil/ghee (2 tsp)"
+        ],
+        "instructions": [
+            "Mix besan with ajwain, turmeric and salt",
+            "Add onion, tomato, ginger, chilli and coriander",
+            "Add water to make thick pouring batter",
+            "Spread thin on greased hot tawa",
+            "Drizzle oil",
+            "Cook both sides till golden"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "vegan",
+            "gluten-free"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/besan-chilla-recipe/"
+    },
+    {
+        "title": "Chana Chaat",
+        "category": "lunch",
+        "prepTime": 10,
+        "cookTime": 30,
+        "calories": 180,
+        "protein": 9,
+        "carbs": 30,
+        "fat": 3,
+        "fiber": 8,
+        "ingredients": [
+            "Chickpeas (1 cup)",
+            "Onion (1 medium, chopped)",
+            "Tomato (1 medium, chopped)",
+            "Cucumber (½, chopped)",
+            "Green chilli (1-2)",
+            "Coriander leaves (2 tbsp)",
+            "Chaat masala (1 tsp)",
+            "Cumin powder (½ tsp)",
+            "Red chilli powder (¼ tsp)",
+            "Lemon juice (2 tbsp)",
+            "Salt to taste"
+        ],
+        "instructions": [
+            "Soak chickpeas overnight",
+            "Pressure cook until tender",
+            "Mix with chopped onion, tomato, cucumber, green chilli and coriander",
+            "Add chaat masala, cumin powder, red chilli powder, lemon juice and salt",
+            "Toss well and serve fresh"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "vegan",
+            "gluten-free"
+        ],
+        "sourceLink": "https://www.archanaskitchen.com/chana-chaat-recipe"
+    },
+    {
+        "title": "Egg Dosa (Muttai Dosa)",
+        "category": "lunch",
+        "prepTime": 15,
+        "cookTime": 10,
+        "calories": 465,
+        "protein": 30,
+        "carbs": 59,
+        "fat": 11,
+        "fiber": 22,
+        "ingredients": [
+            "Dosa batter (1 cup)",
+            "Eggs (2)",
+            "Onion (¼ cup, chopped)",
+            "Green chilies (2, chopped)",
+            "Coriander leaves (2 tbsp)",
+            "Carrot (2-3 tbsp grated, optional)",
+            "Oil (1½ tbsp)",
+            "Salt as needed"
+        ],
+        "instructions": [
+            "Spread dosa batter on hot greased tawa",
+            "Pour egg in center, break yolk and spread evenly",
+            "Add chopped onions, green chilies, coriander",
+            "Drizzle oil around edges and over toppings",
+            "Cook till base is firm",
+            "Flip and cook other side till crispy",
+            "Serve hot"
+        ],
+        "dietaryTags": [
+            "high-protein"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/egg-dosa-recipe/"
+    },
+    {
+        "title": "Soya Chunks Curry",
+        "category": "dinner",
+        "prepTime": 25,
+        "cookTime": 15,
+        "calories": 244,
+        "protein": 20,
+        "carbs": 20,
+        "fat": 8,
+        "fiber": 8,
+        "ingredients": [
+            "Soya chunks (1¼ cup)",
+            "Oil (1½-2 tbsp)",
+            "Cumin seeds (½ tsp)",
+            "Mustard seeds (pinch)",
+            "Curry leaves (1 sprig)",
+            "Onion (1 cup)",
+            "Green chilli (1)",
+            "Ginger garlic paste (1½ tsp)",
+            "Tomatoes (1½ cup/2 large)",
+            "Coconut (¼ cup) or cashews (10)",
+            "Red chilli powder (¾-1 tsp)",
+            "Garam masala (¾-1 tsp)",
+            "Coriander powder (¾-1 tsp)",
+            "Turmeric (⅛ tsp)",
+            "Salt (½-¾ tsp)",
+            "Coriander leaves (2 tbsp)"
+        ],
+        "instructions": [
+            "Boil soya chunks in water till soft, squeeze out water",
+            "Blend tomatoes with coconut",
+            "Temper oil with cumin, mustard, curry leaves",
+            "Sauté onions till golden, add ginger garlic",
+            "Add tomato-coconut paste, cook till thick",
+            "Add spices and soya chunks",
+            "Simmer 5-8 mins"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "vegan",
+            "high-protein"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/soya-chunks-curry/"
+    },
+    {
+        "title": "Egg Bhurji (Coconut Oil)",
+        "category": "dinner",
+        "prepTime": 15,
+        "cookTime": 10,
+        "calories": 180,
+        "protein": 14,
+        "carbs": 4,
+        "fat": 12,
+        "fiber": 1,
+        "ingredients": [
+            "Eggs (4-5)",
+            "Coconut oil (2 tbsp)",
+            "Cumin seeds (½ tsp)",
+            "Curry leaves (1 sprig)",
+            "Onion (1 medium)",
+            "Green chilli (2)",
+            "Ginger (½ inch)",
+            "Tomato (1 medium)",
+            "Turmeric (¼ tsp)",
+            "Red chilli powder (½ tsp)",
+            "Coriander leaves",
+            "Salt to taste"
+        ],
+        "instructions": [
+            "Heat coconut oil, add cumin and curry leaves",
+            "Sauté onion, green chilli, ginger until soft",
+            "Add tomato, turmeric, red chilli and salt",
+            "Cook until tomatoes soften",
+            "Add beaten eggs",
+            "Scramble on low heat until cooked",
+            "Garnish with coriander"
+        ],
+        "dietaryTags": [
+            "high-protein",
+            "low-carb"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/egg-bhurji/"
+    },
+    {
+        "title": "Protein Oats Khichdi",
+        "category": "dinner",
+        "prepTime": 25,
+        "cookTime": 15,
+        "calories": 280,
+        "protein": 14,
+        "carbs": 42,
+        "fat": 6,
+        "fiber": 8,
+        "ingredients": [
+            "Rolled oats (½ cup)",
+            "Moong dal (½ cup)",
+            "Ghee (1 tbsp)",
+            "Cumin seeds (½ tsp)",
+            "Mustard seeds (¼ tsp)",
+            "Onion (1 small)",
+            "Ginger (1 tsp)",
+            "Green chilli (1)",
+            "Turmeric (¼ tsp)",
+            "Mixed vegetables (½ cup)",
+            "Water (3 cups)",
+            "Salt to taste",
+            "Lemon juice",
+            "Coriander"
+        ],
+        "instructions": [
+            "Sauté cumin, mustard in ghee",
+            "Add onion, ginger, green chilli",
+            "Add moong dal, oats, turmeric, vegetables and water",
+            "Pressure cook or simmer until dal is soft",
+            "Season with salt, lemon juice and coriander"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "high-protein"
+        ],
+        "sourceLink": "https://ministryofcurry.com/protein-oats-khichdi/"
+    },
+    {
+        "title": "Chana Masala",
+        "category": "dinner",
+        "prepTime": 40,
+        "cookTime": 30,
+        "calories": 260,
+        "protein": 12,
+        "carbs": 38,
+        "fat": 7,
+        "fiber": 10,
+        "ingredients": [
+            "Chickpeas (1½ cups)",
+            "Onion (2 medium)",
+            "Tomatoes (3)",
+            "Ginger (1½ inch)",
+            "Garlic (5-6 cloves)",
+            "Green chilli (2)",
+            "Oil (3 tbsp)",
+            "Cumin seeds (1 tsp)",
+            "Bay leaf (1)",
+            "Cinnamon (1 inch)",
+            "Cloves (3)",
+            "Chana masala (1½ tbsp)",
+            "Red chilli powder (¾ tsp)",
+            "Coriander powder (1 tsp)",
+            "Amchur/dry mango powder (1 tsp)",
+            "Salt",
+            "Coriander leaves"
+        ],
+        "instructions": [
+            "Soak and cook chickpeas",
+            "Blend onion-tomato masala",
+            "Sauté whole spices",
+            "Add masala and cook until oil separates",
+            "Add chickpeas, chana masala powder, amchur",
+            "Simmer until thick",
+            "Garnish with coriander and ginger"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "vegan",
+            "gluten-free"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/chana-masala-recipe/"
+    },
+    {
+        "title": "Rajma Masala",
+        "category": "dinner",
+        "prepTime": 45,
+        "cookTime": 30,
+        "calories": 290,
+        "protein": 13,
+        "carbs": 42,
+        "fat": 8,
+        "fiber": 11,
+        "ingredients": [
+            "Rajma/kidney beans (1 cup)",
+            "Onion (2 medium)",
+            "Tomatoes (3 medium)",
+            "Ginger-garlic paste (1 tbsp)",
+            "Oil/ghee (3 tbsp)",
+            "Cumin seeds (1 tsp)",
+            "Bay leaf (1)",
+            "Red chilli powder (1 tsp)",
+            "Coriander powder (1 tsp)",
+            "Garam masala (½ tsp)",
+            "Kasuri methi/dried fenugreek leaves (1 tsp)",
+            "Cream (2 tbsp, optional)",
+            "Salt",
+            "Coriander leaves"
+        ],
+        "instructions": [
+            "Soak and pressure cook rajma until soft",
+            "Sauté onion, ginger-garlic until golden",
+            "Add tomato puree, cook until oil separates",
+            "Add spices, cooked rajma with liquid",
+            "Simmer until thick and creamy",
+            "Finish with cream and coriander"
+        ],
+        "dietaryTags": [
+            "vegetarian",
+            "vegan",
+            "gluten-free"
+        ],
+        "sourceLink": "https://www.indianhealthyrecipes.com/rajma-masala-recipe/"
+    }
+]
