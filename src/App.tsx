@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import AuthCallback from './pages/AuthCallback';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -10,18 +10,20 @@ import { supabase } from './lib/supabase';
 import { useAuth } from './hooks/useAuth';
 import RecipeList from './components/cookbook/RecipeList';
 import AboutPage from './pages/AboutPage';
+import MealCalendarPage from './pages/MealCalendarPage';
 
 // Home/Landing Page Component
 const HomePage: React.FC = () => {
   const { user, signInWithGoogle } = useAuth();
+  const navigate = useNavigate();
 
   const handleFeatureClick = (route: string) => {
     if (!user) {
-      // Prompt user to login
+      // User not logged in - prompt to login
       signInWithGoogle();
     } else {
-      // Navigate to the route
-      window.location.href = route;
+      // User already logged in - navigate directly
+      navigate(route);
     }
   };
 
@@ -55,7 +57,7 @@ const HomePage: React.FC = () => {
               Login with your Google account to access personalized nutrition recommendations,
               track your progress, and explore our cookbook of healthy Indian recipes.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
               <div
                 onClick={() => handleFeatureClick('/survey')}
                 className="p-6 rounded-lg transition-transform hover:scale-105 cursor-pointer"
@@ -84,6 +86,21 @@ const HomePage: React.FC = () => {
                 <h3 className="font-semibold mb-2" style={{ color: '#E67E22' }}>Indian Recipes</h3>
                 <p className="text-sm" style={{ color: '#8B4513' }}>
                   Browse 14 healthy Indian recipes with complete nutrition information
+                </p>
+              </div>
+              <div
+                onClick={() => handleFeatureClick('/calendar')}
+                className="p-6 rounded-lg transition-transform hover:scale-105 cursor-pointer"
+                style={{
+                  background: 'linear-gradient(135deg, #FFE5CC 0%, #FFF8DC 100%)',
+                  border: '2px solid #E67E22',
+                  boxShadow: '0 4px 12px rgba(230, 126, 34, 0.2)'
+                }}
+              >
+                <div className="text-4xl mb-3">📅</div>
+                <h3 className="font-semibold mb-2" style={{ color: '#E67E22' }}>Meal Calendar</h3>
+                <p className="text-sm" style={{ color: '#8B4513' }}>
+                  Plan your weekly meals with our interactive calendar and recipe selector
                 </p>
               </div>
               <div
@@ -300,6 +317,14 @@ const App: React.FC = () => {
         element={
           <ProtectedRoute>
             <CookbookPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/calendar"
+        element={
+          <ProtectedRoute>
+            <MealCalendarPage />
           </ProtectedRoute>
         }
       />

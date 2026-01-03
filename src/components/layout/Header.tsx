@@ -45,6 +45,12 @@ const Header: React.FC = () => {
                     Cookbook
                   </a>
                   <a
+                    href="/calendar"
+                    className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
+                  >
+                    Meal Calendar
+                  </a>
+                  <a
                     href="/survey"
                     className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
                   >
@@ -127,6 +133,12 @@ const Header: React.FC = () => {
                   className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
                 >
                   Cookbook
+                </a>
+                <a
+                  href="/calendar"
+                  className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
+                >
+                  Meal Calendar
                 </a>
                 <a
                   href="/survey"
