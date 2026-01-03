@@ -65,11 +65,8 @@ export const surveyQuestions: SurveyQuestion[] = [
         question: 'Do you follow any dietary restrictions?',
         options: [
             { value: 'none', label: 'None' },
-            { value: 'vegetarian', label: 'Vegetarian' },
             { value: 'vegan', label: 'Vegan' },
-            { value: 'pescatarian', label: 'Pescatarian' },
             { value: 'keto', label: 'Keto' },
-            { value: 'paleo', label: 'Paleo' },
             { value: 'gluten_free', label: 'Gluten-Free' },
             { value: 'dairy_free', label: 'Dairy-Free' },
             { value: 'halal', label: 'Halal' },
