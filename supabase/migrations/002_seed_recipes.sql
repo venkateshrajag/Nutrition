@@ -5,8 +5,8 @@
 -- Insert all 14 recipes from Saffron Suvar Recipe Collection
 
 -- BREAKFAST RECIPES
-INSERT INTO recipes (title, category, prep_time, cook_time, calories, protein, carbs, fat, fiber, ingredients, instructions, dietary_tags, source_link) VALUES
-('Moong Dal Idli', 'breakfast', 35, 10, 90, 7, 8, 4, 1, 
+INSERT INTO recipes (title, category, prep_time, cook_time, calories, protein, carbs, fat, fiber, saturated_fat, trans_fat, cholesterol, sodium, potassium, sugar, vitamin_a, vitamin_c, calcium, iron, ingredients, instructions, dietary_tags, source_link) VALUES
+('Moong Dal Idli', 'breakfast', 35, 10, 90, 7, 8, 4, 1, 1, 0.01, 6, 217, 40, 1, 348, 11, 25, 1,
  '["Moong dal (1 cup)", "Oil (2 tbsp)", "Mustard seeds (1 tsp)", "Chana dal (½ tsp)", "Urad dal (½ tsp)", "Cumin seeds (1 tsp)", "Hing (pinch)", "Curry leaves", "Ginger (1 inch)", "Green chilli (3)", "Carrot (2 tbsp grated)", "Turmeric (¼ tsp)", "Rava coarse (1 cup)", "Curd (1 cup)", "Salt (1 tsp)", "Coriander (2 tbsp)", "Eno (1 tsp)", "Cashew for garnish"]'::jsonb,
  '["Soak moong dal for 2 hours", "Grind with curd to make batter", "Temper oil with mustard, cumin, dals, curry leaves", "Add ginger, chilli, carrot, turmeric", "Roast rava till aromatic", "Mix into batter and rest for 20 mins", "Add eno and coriander", "Steam for 10 mins with cashew garnish"]'::jsonb,
  ARRAY['vegetarian'], 'https://hebbarskitchen.com/moong-dal-idli-recipe/'),

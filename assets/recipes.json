@@ -2,13 +2,23 @@
     {
         "title": "Moong Dal Idli",
         "category": "breakfast",
-        "prepTime": 35,
-        "cookTime": 10,
+        "prep_time": 35,
+        "cook_time": 10,
         "calories": 90,
         "protein": 7,
         "carbs": 8,
         "fat": 4,
         "fiber": 1,
+        "saturated_fat": 1,
+        "trans_fat": 0.01,
+        "cholesterol": 6,
+        "sodium": 217,
+        "potassium": 40,
+        "sugar": 1,
+        "vitamin_a": 348,
+        "vitamin_c": 11,
+        "calcium": 25,
+        "iron": 1,
         "ingredients": [
             "Moong dal (1 cup)",
             "Oil (2 tbsp)",
@@ -39,21 +49,31 @@
             "Add eno and coriander",
             "Steam for 10 mins with cashew garnish"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian"
         ],
-        "sourceLink": "https://hebbarskitchen.com/moong-dal-idli-recipe/"
+        "source_link": "https://hebbarskitchen.com/moong-dal-idli-recipe/"
     },
     {
         "title": "Quinoa Upma + Greek Yogurt",
         "category": "breakfast",
-        "prepTime": 5,
-        "cookTime": 15,
+        "prep_time": 5,
+        "cook_time": 15,
         "calories": 496,
         "protein": 31,
         "carbs": 63,
         "fat": 14,
         "fiber": 9,
+        "saturated_fat": 1,
+        "trans_fat": 0.03,
+        "cholesterol": 5,
+        "sodium": 371,
+        "potassium": 693,
+        "sugar": 12,
+        "vitamin_a": 292,
+        "vitamin_c": 44,
+        "calcium": 268,
+        "iron": 4,
         "ingredients": [
             "Quinoa (1 cup)",
             "Oil (1½ tbsp)",
@@ -84,22 +104,32 @@
             "Add lemon juice",
             "Serve with 1 cup Oikos Greek Yogurt"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "high-protein"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/quinoa-upma/"
+        "source_link": "https://www.indianhealthyrecipes.com/quinoa-upma/"
     },
     {
         "title": "Medu Vada + Greek Yogurt",
         "category": "breakfast",
-        "prepTime": 30,
-        "cookTime": 15,
+        "prep_time": 30,
+        "cook_time": 15,
         "calories": 228,
         "protein": 22,
         "carbs": 16,
         "fat": 7,
         "fiber": 2,
+        "saturated_fat": 1,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "sodium": 130,
+        "potassium": 105,
+        "sugar": 7,
+        "vitamin_a": 0,
+        "vitamin_c": 0.8,
+        "calcium": 209,
+        "iron": 1,
         "ingredients": [
             "Urad dal (1 cup)",
             "Salt (⅓ tsp)",
@@ -122,22 +152,32 @@
             "Deep fry on medium flame till golden",
             "Serve with 1 cup Oikos Greek Yogurt"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "high-protein"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/medu-vada-recipe/"
+        "source_link": "https://www.indianhealthyrecipes.com/medu-vada-recipe/"
     },
     {
         "title": "Cottage Cheese Uttapam",
         "category": "breakfast",
-        "prepTime": 30,
-        "cookTime": 20,
+        "prep_time": 30,
+        "cook_time": 20,
         "calories": 355,
         "protein": 25,
         "carbs": 58,
         "fat": 2,
         "fiber": 10,
+        "saturated_fat": 1,
+        "trans_fat": 0,
+        "cholesterol": 3,
+        "sodium": 1751,
+        "potassium": 349,
+        "sugar": 8,
+        "vitamin_a": 741,
+        "vitamin_c": 17,
+        "calcium": 118,
+        "iron": 4,
         "ingredients": [
             "Mung dal (¼ cup)",
             "Urad dal (¼ cup)",
@@ -162,22 +202,32 @@
             "Top with onion, tomato, cilantro",
             "Cook both sides till golden"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "high-protein"
         ],
-        "sourceLink": "https://ministryofcurry.com/cottage-cheese-uttapam/"
+        "source_link": "https://ministryofcurry.com/cottage-cheese-uttapam/"
     },
     {
         "title": "Egg Biryani + Greek Yogurt",
         "category": "lunch",
-        "prepTime": 45,
-        "cookTime": 30,
+        "prep_time": 45,
+        "cook_time": 30,
         "calories": 700,
         "protein": 34,
         "carbs": 94,
         "fat": 19,
         "fiber": 4,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 224,
+        "sodium": 779,
+        "potassium": 495,
+        "sugar": 12,
+        "vitamin_a": 450,
+        "vitamin_c": 8,
+        "calcium": 285,
+        "iron": 3,
         "ingredients": [
             "Basmati rice (2 cups)",
             "Coconut oil (3 tbsp)",
@@ -212,21 +262,31 @@
             "Pressure cook 1 whistle or Instant Pot 5 mins",
             "Serve with 1 cup Oikos Greek Yogurt"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "high-protein"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/egg-biryani/"
+        "source_link": "https://www.indianhealthyrecipes.com/egg-biryani/"
     },
     {
         "title": "Dal Vada",
         "category": "lunch",
-        "prepTime": 25,
-        "cookTime": 15,
+        "prep_time": 25,
+        "cook_time": 15,
         "calories": 90,
         "protein": 6,
         "carbs": 16,
         "fat": 1,
         "fiber": 7,
+        "saturated_fat": 1,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sodium": 150,
+        "potassium": 280,
+        "sugar": 2,
+        "vitamin_a": 45,
+        "vitamin_c": 3,
+        "calcium": 30,
+        "iron": 2,
         "ingredients": [
             "Moong dal (¾ cup)",
             "Chana dal (¼ cup)",
@@ -249,22 +309,32 @@
             "Shape into flat balls",
             "Deep fry or air fry 15-17 mins at 360°F"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "vegan"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/dal-vada-recipe/"
+        "source_link": "https://www.indianhealthyrecipes.com/dal-vada-recipe/"
     },
     {
         "title": "Besan Chilla",
         "category": "lunch",
-        "prepTime": 15,
-        "cookTime": 10,
+        "prep_time": 15,
+        "cook_time": 10,
         "calories": 124,
         "protein": 7,
         "carbs": 18,
         "fat": 2,
         "fiber": 3,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sodium": 20,
+        "potassium": 291,
+        "sugar": 3,
+        "vitamin_a": 80,
+        "vitamin_c": 4,
+        "calcium": 20,
+        "iron": 2,
         "ingredients": [
             "Besan/chickpea flour (1 cup)",
             "Ajwain/carom seeds (½ tsp)",
@@ -286,23 +356,33 @@
             "Drizzle oil",
             "Cook both sides till golden"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "vegan",
             "gluten-free"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/besan-chilla-recipe/"
+        "source_link": "https://www.indianhealthyrecipes.com/besan-chilla-recipe/"
     },
     {
         "title": "Chana Chaat",
         "category": "lunch",
-        "prepTime": 10,
-        "cookTime": 30,
+        "prep_time": 10,
+        "cook_time": 30,
         "calories": 180,
         "protein": 9,
         "carbs": 30,
         "fat": 3,
         "fiber": 8,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sodium": 320,
+        "potassium": 420,
+        "sugar": 5,
+        "vitamin_a": 350,
+        "vitamin_c": 15,
+        "calcium": 55,
+        "iron": 3,
         "ingredients": [
             "Chickpeas (1 cup)",
             "Onion (1 medium, chopped)",
@@ -323,23 +403,33 @@
             "Add chaat masala, cumin powder, red chilli powder, lemon juice and salt",
             "Toss well and serve fresh"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "vegan",
             "gluten-free"
         ],
-        "sourceLink": "https://www.archanaskitchen.com/chana-chaat-recipe"
+        "source_link": "https://www.archanaskitchen.com/chana-chaat-recipe"
     },
     {
         "title": "Egg Dosa (Muttai Dosa)",
         "category": "lunch",
-        "prepTime": 15,
-        "cookTime": 10,
+        "prep_time": 15,
+        "cook_time": 10,
         "calories": 465,
         "protein": 30,
         "carbs": 59,
         "fat": 11,
         "fiber": 22,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 164,
+        "sodium": 277,
+        "potassium": 141,
+        "sugar": 3,
+        "vitamin_a": 240,
+        "vitamin_c": 13.7,
+        "calcium": 97,
+        "iron": 8.4,
         "ingredients": [
             "Dosa batter (1 cup)",
             "Eggs (2)",
@@ -359,21 +449,31 @@
             "Flip and cook other side till crispy",
             "Serve hot"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "high-protein"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/egg-dosa-recipe/"
+        "source_link": "https://www.indianhealthyrecipes.com/egg-dosa-recipe/"
     },
     {
         "title": "Soya Chunks Curry",
         "category": "dinner",
-        "prepTime": 25,
-        "cookTime": 15,
+        "prep_time": 25,
+        "cook_time": 15,
         "calories": 244,
         "protein": 20,
         "carbs": 20,
         "fat": 8,
         "fiber": 8,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sodium": 456,
+        "potassium": 178,
+        "sugar": 8,
+        "vitamin_a": 160,
+        "vitamin_c": 28,
+        "calcium": 156,
+        "iron": 5.2,
         "ingredients": [
             "Soya chunks (1¼ cup)",
             "Oil (1½-2 tbsp)",
@@ -401,23 +501,33 @@
             "Add spices and soya chunks",
             "Simmer 5-8 mins"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "vegan",
             "high-protein"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/soya-chunks-curry/"
+        "source_link": "https://www.indianhealthyrecipes.com/soya-chunks-curry/"
     },
     {
         "title": "Egg Bhurji (Coconut Oil)",
         "category": "dinner",
-        "prepTime": 15,
-        "cookTime": 10,
+        "prep_time": 15,
+        "cook_time": 10,
         "calories": 180,
         "protein": 14,
         "carbs": 4,
         "fat": 12,
         "fiber": 1,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 215,
+        "sodium": 180,
+        "potassium": 180,
+        "sugar": 2,
+        "vitamin_a": 520,
+        "vitamin_c": 6,
+        "calcium": 55,
+        "iron": 2,
         "ingredients": [
             "Eggs (4-5)",
             "Coconut oil (2 tbsp)",
@@ -441,22 +551,32 @@
             "Scramble on low heat until cooked",
             "Garnish with coriander"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "high-protein",
             "low-carb"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/egg-bhurji/"
+        "source_link": "https://www.indianhealthyrecipes.com/egg-bhurji/"
     },
     {
         "title": "Protein Oats Khichdi",
         "category": "dinner",
-        "prepTime": 25,
-        "cookTime": 15,
+        "prep_time": 25,
+        "cook_time": 15,
         "calories": 280,
         "protein": 14,
         "carbs": 42,
         "fat": 6,
         "fiber": 8,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 10,
+        "sodium": 320,
+        "potassium": 450,
+        "sugar": 3,
+        "vitamin_a": 380,
+        "vitamin_c": 10,
+        "calcium": 45,
+        "iron": 3,
         "ingredients": [
             "Rolled oats (½ cup)",
             "Moong dal (½ cup)",
@@ -480,22 +600,32 @@
             "Pressure cook or simmer until dal is soft",
             "Season with salt, lemon juice and coriander"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "high-protein"
         ],
-        "sourceLink": "https://ministryofcurry.com/protein-oats-khichdi/"
+        "source_link": "https://ministryofcurry.com/protein-oats-khichdi/"
     },
     {
         "title": "Chana Masala",
         "category": "dinner",
-        "prepTime": 40,
-        "cookTime": 30,
+        "prep_time": 40,
+        "cook_time": 30,
         "calories": 260,
         "protein": 12,
         "carbs": 38,
         "fat": 7,
         "fiber": 10,
+        "saturated_fat": 1,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sodium": 480,
+        "potassium": 520,
+        "sugar": 7,
+        "vitamin_a": 420,
+        "vitamin_c": 14,
+        "calcium": 75,
+        "iron": 4,
         "ingredients": [
             "Chickpeas (1½ cups)",
             "Onion (2 medium)",
@@ -524,23 +654,33 @@
             "Simmer until thick",
             "Garnish with coriander and ginger"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "vegan",
             "gluten-free"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/chana-masala-recipe/"
+        "source_link": "https://www.indianhealthyrecipes.com/chana-masala-recipe/"
     },
     {
         "title": "Rajma Masala",
         "category": "dinner",
-        "prepTime": 45,
-        "cookTime": 30,
+        "prep_time": 45,
+        "cook_time": 30,
         "calories": 290,
         "protein": 13,
         "carbs": 42,
         "fat": 8,
         "fiber": 11,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "sodium": 520,
+        "potassium": 580,
+        "sugar": 5,
+        "vitamin_a": 380,
+        "vitamin_c": 10,
+        "calcium": 85,
+        "iron": 5,
         "ingredients": [
             "Rajma/kidney beans (1 cup)",
             "Onion (2 medium)",
@@ -565,11 +705,11 @@
             "Simmer until thick and creamy",
             "Finish with cream and coriander"
         ],
-        "dietaryTags": [
+        "dietary_tags": [
             "vegetarian",
             "vegan",
             "gluten-free"
         ],
-        "sourceLink": "https://www.indianhealthyrecipes.com/rajma-masala-recipe/"
+        "source_link": "https://www.indianhealthyrecipes.com/rajma-masala-recipe/"
     }
 ]

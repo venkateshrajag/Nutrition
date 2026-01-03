@@ -12,6 +12,18 @@ import RecipeList from './components/cookbook/RecipeList';
 
 // Home/Landing Page Component
 const HomePage: React.FC = () => {
+  const { user, signInWithGoogle } = useAuth();
+
+  const handleFeatureClick = (route: string) => {
+    if (!user) {
+      // Prompt user to login
+      signInWithGoogle();
+    } else {
+      // Navigate to the route
+      window.location.href = route;
+    }
+  };
+
   return (
     <Layout>
       <div className="text-center py-12">
@@ -44,7 +56,8 @@ const HomePage: React.FC = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <div
-                className="p-6 rounded-lg transition-transform hover:scale-105"
+                onClick={() => handleFeatureClick('/survey')}
+                className="p-6 rounded-lg transition-transform hover:scale-105 cursor-pointer"
                 style={{
                   background: 'linear-gradient(135deg, #FFE5CC 0%, #FFF8DC 100%)',
                   border: '2px solid #FF9933',
@@ -58,7 +71,8 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
               <div
-                className="p-6 rounded-lg transition-transform hover:scale-105"
+                onClick={() => handleFeatureClick('/cookbook')}
+                className="p-6 rounded-lg transition-transform hover:scale-105 cursor-pointer"
                 style={{
                   background: 'linear-gradient(135deg, #FFE5CC 0%, #FFF8DC 100%)',
                   border: '2px solid #F39C12',
@@ -72,7 +86,8 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
               <div
-                className="p-6 rounded-lg transition-transform hover:scale-105"
+                onClick={() => handleFeatureClick('/dashboard')}
+                className="p-6 rounded-lg transition-transform hover:scale-105 cursor-pointer"
                 style={{
                   background: 'linear-gradient(135deg, #FFE5CC 0%, #FFF8DC 100%)',
                   border: '2px solid #C0392B',
@@ -100,7 +115,7 @@ const SurveyPage: React.FC = () => {
 
 // Dashboard Page
 const DashboardPage: React.FC = () => {
-  const { userProfile } = useAuth();
+  const { userProfile, loading: authLoading } = useAuth();
   const [loading, setLoading] = useState(true);
   const [feedback, setFeedback] = useState<NutritionFeedback | null>(null);
   const [surveyDate, setSurveyDate] = useState<string>('');
@@ -108,8 +123,13 @@ const DashboardPage: React.FC = () => {
 
   useEffect(() => {
     const fetchSurveyAndGenerateFeedback = async () => {
+      // Wait for auth to finish loading before checking userProfile
+      if (authLoading) {
+        return;
+      }
+
       if (!userProfile) {
-        setError('User profile not found');
+        setError('Please complete your one-time profile to get started');
         setLoading(false);
         return;
       }
@@ -163,7 +183,7 @@ const DashboardPage: React.FC = () => {
     };
 
     fetchSurveyAndGenerateFeedback();
-  }, [userProfile]);
+  }, [userProfile, authLoading]);
 
   if (loading) {
     return (
