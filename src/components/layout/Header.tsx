@@ -50,6 +50,12 @@ const Header: React.FC = () => {
                   >
                     Survey
                   </a>
+                  <a
+                    href="/about"
+                    className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium transition-colors drop-shadow"
+                  >
+                    About
+                  </a>
                 </>
               )}
             </nav>
@@ -127,6 +133,12 @@ const Header: React.FC = () => {
                   className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
                 >
                   Survey
+                </a>
+                <a
+                  href="/about"
+                  className="text-white hover:text-yellow-100 px-3 py-2 text-sm font-medium"
+                >
+                  About
                 </a>
               </>
             )}

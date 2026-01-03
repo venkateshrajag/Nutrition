@@ -9,6 +9,7 @@ import { generateFeedback, NutritionFeedback } from './utils/nutritionCalculatio
 import { supabase } from './lib/supabase';
 import { useAuth } from './hooks/useAuth';
 import RecipeList from './components/cookbook/RecipeList';
+import AboutPage from './pages/AboutPage';
 
 // Home/Landing Page Component
 const HomePage: React.FC = () => {
@@ -299,6 +300,14 @@ const App: React.FC = () => {
         element={
           <ProtectedRoute>
             <CookbookPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/about"
+        element={
+          <ProtectedRoute>
+            <AboutPage />
           </ProtectedRoute>
         }
       />
