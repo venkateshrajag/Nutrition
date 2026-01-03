@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
           Welcome to Saffron Suvai
         </h1>
         <p className="text-xl mb-8" style={{ color: '#8B4513' }}>
-          Your personalized nutrition companion
+          Where culture meets performance
         </p>
         <div className="max-w-3xl mx-auto">
           <div

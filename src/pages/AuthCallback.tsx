@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 
@@ -7,43 +7,88 @@ const AuthCallback: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        let timeoutId: NodeJS.Timeout;
+
         // Handle the OAuth callback
         const handleCallback = async () => {
             try {
-                // Get the session from the URL hash
-                const { data, error } = await supabase.auth.getSession();
+                console.log('AuthCallback: Starting callback handling');
 
-                if (error) {
-                    console.error('Auth callback error:', error);
-                    setError(error.message);
-                    // Redirect to home page after 3 seconds
+                // Set a timeout to catch hanging promises
+                timeoutId = setTimeout(() => {
+                    console.error('AuthCallback: Timeout - getSession took too long');
+                    setError('Authentication timeout. Please try again.');
+                    navigate('/');
+                }, 10000);
+
+                // Get the session from the URL hash
+                const { data, error: sessionError } = await supabase.auth.getSession();
+
+                clearTimeout(timeoutId);
+
+                console.log('AuthCallback: Session data received', {
+                    hasSession: !!data?.session,
+                    error: sessionError,
+                    userId: data?.session?.user?.id
+                });
+
+                if (sessionError) {
+                    console.error('Auth callback error:', sessionError);
+                    setError(sessionError.message);
                     setTimeout(() => navigate('/'), 3000);
                     return;
                 }
 
                 if (data.session) {
-                    // Check if user has completed survey
-                    const { data: userData, error: userError } = await supabase
+                    console.log('AuthCallback: Session found, creating/updating user profile');
+
+                    // Try to create/update user profile first
+                    const { data: upsertData, error: upsertError } = await supabase
                         .from('users')
-                        .select('has_completed_survey')
-                        .eq('google_id', data.session.user.id)
+                        .upsert({
+                            google_id: data.session.user.id,
+                            email: data.session.user.email!,
+                            name: data.session.user.user_metadata?.name || data.session.user.user_metadata?.full_name || null,
+                            picture: data.session.user.user_metadata?.avatar_url || data.session.user.user_metadata?.picture || null,
+                            last_login_at: new Date().toISOString()
+                        }, {
+                            onConflict: 'google_id',
+                            ignoreDuplicates: false
+                        })
+                        .select()
                         .single();
 
-                    if (userError) {
-                        console.error('Error fetching user data:', userError);
+                    if (upsertError) {
+                        console.error('AuthCallback: Error creating user profile:', upsertError);
+                        console.error('AuthCallback: Error details:', {
+                            code: upsertError.code,
+                            message: upsertError.message,
+                            details: upsertError.details,
+                            hint: upsertError.hint
+                        });
+                        // Continue anyway - redirect to survey as default
+                        console.log('AuthCallback: Redirecting to /survey (default for profile creation failure)');
+                        navigate('/survey');
+                        return;
                     }
 
+                    console.log('AuthCallback: User profile created/updated:', upsertData);
+
                     // Redirect based on survey status
-                    if (userData?.has_completed_survey) {
+                    if (upsertData?.has_completed_survey) {
+                        console.log('AuthCallback: User has completed survey, redirecting to /dashboard');
                         navigate('/dashboard');
                     } else {
+                        console.log('AuthCallback: User has not completed survey, redirecting to /survey');
                         navigate('/survey');
                     }
                 } else {
                     // No session, redirect to home
+                    console.log('AuthCallback: No session found, redirecting to /');
                     navigate('/');
                 }
             } catch (err) {
+                clearTimeout(timeoutId);
                 console.error('Exception in auth callback:', err);
                 setError('An unexpected error occurred');
                 setTimeout(() => navigate('/'), 3000);
@@ -51,6 +96,10 @@ const AuthCallback: React.FC = () => {
         };
 
         handleCallback();
+
+        return () => {
+            if (timeoutId) clearTimeout(timeoutId);
+        };
     }, [navigate]);
 
     if (error) {

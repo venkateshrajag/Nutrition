@@ -22,26 +22,45 @@ export function useAuth() {
   // Create or update user profile in database
   const upsertUserProfile = async (authUser: User) => {
     try {
-      const { data, error } = await supabase
+      console.log('Attempting to upsert user profile for:', authUser.email);
+      console.log('User metadata:', authUser.user_metadata);
+
+      const userData = {
+        google_id: authUser.id,
+        email: authUser.email!,
+        name: authUser.user_metadata?.name || authUser.user_metadata?.full_name || null,
+        picture: authUser.user_metadata?.avatar_url || authUser.user_metadata?.picture || null,
+        last_login_at: new Date().toISOString()
+      };
+
+      console.log('Upserting data:', userData);
+
+      // Add timeout to prevent hanging
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Upsert timeout')), 5000)
+      );
+
+      const upsertPromise = supabase
         .from('users')
-        .upsert({
-          google_id: authUser.id,
-          email: authUser.email!,
-          name: authUser.user_metadata?.name || authUser.user_metadata?.full_name,
-          picture: authUser.user_metadata?.avatar_url || authUser.user_metadata?.picture,
-          last_login_at: new Date().toISOString()
-        }, {
+        .upsert(userData, {
           onConflict: 'google_id',
           ignoreDuplicates: false
         })
         .select()
         .single();
 
+      const { data, error } = await Promise.race([upsertPromise, timeoutPromise]) as any;
+
       if (error) {
         console.error('Error upserting user profile:', error);
+        console.error('Error code:', error.code);
+        console.error('Error message:', error.message);
+        console.error('Error details:', error.details);
+        console.error('Error hint:', error.hint);
         return null;
       }
 
+      console.log('User profile created/updated successfully:', data);
       return data as UserProfile;
     } catch (err) {
       console.error('Exception upserting user profile:', err);
@@ -50,34 +69,61 @@ export function useAuth() {
   };
 
   useEffect(() => {
+    console.log('useAuth: useEffect running');
+
     // Check if Supabase is configured
     if (!isSupabaseConfigured()) {
+      console.error('Supabase is not configured');
       setError('Supabase is not configured. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY environment variables.');
       setLoading(false);
       return;
     }
 
+    console.log('useAuth: Supabase is configured, fetching session...');
+
     // Get initial session
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
-      if (session?.user) {
-        setUser(session.user);
-        // Create/update user profile and fetch it
-        const profile = await upsertUserProfile(session.user);
-        if (profile) {
-          setUserProfile(profile);
+    supabase.auth.getSession()
+      .then(async ({ data: { session }, error: sessionError }) => {
+        console.log('useAuth: getSession completed', { session: !!session, error: sessionError });
+
+        if (sessionError) {
+          console.error('Session error:', sessionError);
+          setLoading(false);
+          return;
         }
-      }
-      setLoading(false);
-    });
+
+        if (session?.user) {
+          console.log('useAuth: User found, setting user state');
+          setUser(session.user);
+
+          // Create/update user profile and fetch it
+          const profile = await upsertUserProfile(session.user);
+          if (profile) {
+            console.log('useAuth: Profile set successfully');
+            setUserProfile(profile);
+          } else {
+            console.warn('useAuth: Could not create/fetch user profile. User can still access the app.');
+          }
+        } else {
+          console.log('useAuth: No session found');
+        }
+
+        console.log('useAuth: Setting loading to false');
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('useAuth: Error in getSession:', err);
+        setLoading(false);
+      });
 
     // Listen for auth changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      console.log('useAuth: Auth state changed', { event: _event, session: !!session });
       setUser(session?.user ?? null);
 
       if (session?.user) {
-        // Create/update user profile and fetch it
         const profile = await upsertUserProfile(session.user);
         if (profile) {
           setUserProfile(profile);
@@ -87,7 +133,10 @@ export function useAuth() {
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      console.log('useAuth: Cleaning up subscription');
+      subscription.unsubscribe();
+    };
   }, []);
 
   const signInWithGoogle = async () => {
@@ -140,6 +189,8 @@ export function useAuth() {
     }
   };
 
+  console.log('useAuth: Current state', { user: !!user, userProfile: !!userProfile, loading });
+
   return {
     user,
     userProfile,
@@ -149,4 +200,3 @@ export function useAuth() {
     signOut,
   };
 }
-
