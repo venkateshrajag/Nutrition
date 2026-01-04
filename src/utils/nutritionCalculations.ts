@@ -73,35 +73,65 @@ export function calculateTargetCalories(tdee: number, healthGoals: string[]): nu
 }
 
 /**
- * Calculate macro distribution based on goals
+ * Calculate macro distribution based on goals and body weight
  * Returns grams of protein, carbs, and fat
+ * 
+ * Protein calculation for student athletes: 1.2 to 2.0 g/kg of body weight
+ * - Sedentary/Light activity: 1.2 g/kg
+ * - Moderate activity: 1.4 g/kg
+ * - Active: 1.6 g/kg
+ * - Very active or muscle gain: 1.8-2.0 g/kg
  */
 export function calculateMacros(
     targetCalories: number,
-    healthGoals: string[]
+    healthGoals: string[],
+    weight: number,
+    activityLevel: string
 ): { protein: number; carbs: number; fat: number } {
-    let proteinPercent = 25;
-    let carbsPercent = 50;
-    let fatPercent = 25;
+    // Calculate protein based on body weight (g/kg)
+    let proteinPerKg = 1.4; // Default for moderate activity
 
-    // Adjust for muscle gain
+    // Adjust based on activity level
+    if (activityLevel === 'sedentary' || activityLevel === 'light') {
+        proteinPerKg = 1.2;
+    } else if (activityLevel === 'moderate') {
+        proteinPerKg = 1.4;
+    } else if (activityLevel === 'active') {
+        proteinPerKg = 1.6;
+    } else if (activityLevel === 'very_active') {
+        proteinPerKg = 1.8;
+    }
+
+    // Increase protein for muscle gain goals
     if (healthGoals.includes('muscle_gain')) {
-        proteinPercent = 30;
-        carbsPercent = 45;
-        fatPercent = 25;
+        proteinPerKg = Math.max(proteinPerKg, 1.8); // At least 1.8 g/kg for muscle gain
     }
 
-    // Adjust for weight loss
+    // Calculate protein grams based on body weight
+    const proteinGrams = Math.round(weight * proteinPerKg);
+
+    // Calculate calories from protein (4 cal/g)
+    const proteinCalories = proteinGrams * 4;
+
+    // Remaining calories for carbs and fat
+    const remainingCalories = targetCalories - proteinCalories;
+
+    // Default fat and carb percentages of remaining calories
+    let fatPercent = 30;
+    let carbsPercent = 70;
+
+    // Adjust for specific goals
     if (healthGoals.includes('weight_loss')) {
-        proteinPercent = 30;
-        carbsPercent = 40;
-        fatPercent = 30;
+        fatPercent = 35; // Slightly higher fat for satiety
+        carbsPercent = 65;
+    } else if (healthGoals.includes('muscle_gain') || healthGoals.includes('energy')) {
+        fatPercent = 25; // More carbs for energy and muscle gain
+        carbsPercent = 75;
     }
 
-    // Calculate grams (protein: 4 cal/g, carbs: 4 cal/g, fat: 9 cal/g)
-    const proteinGrams = Math.round((targetCalories * (proteinPercent / 100)) / 4);
-    const carbsGrams = Math.round((targetCalories * (carbsPercent / 100)) / 4);
-    const fatGrams = Math.round((targetCalories * (fatPercent / 100)) / 9);
+    // Calculate grams (carbs: 4 cal/g, fat: 9 cal/g)
+    const carbsGrams = Math.round((remainingCalories * (carbsPercent / 100)) / 4);
+    const fatGrams = Math.round((remainingCalories * (fatPercent / 100)) / 9);
 
     return {
         protein: proteinGrams,
@@ -126,7 +156,7 @@ export function generateFeedback(responses: SurveyResponses): NutritionFeedback 
     const bmr = calculateBMR(weight, height, age);
     const tdee = calculateTDEE(bmr, activityLevel);
     const targetCalories = calculateTargetCalories(tdee, healthGoals);
-    const macros = calculateMacros(targetCalories, healthGoals);
+    const macros = calculateMacros(targetCalories, healthGoals, weight, activityLevel);
 
     const calculations: NutritionCalculations = {
         bmr: Math.round(bmr),
@@ -158,9 +188,18 @@ export function generateFeedback(responses: SurveyResponses): NutritionFeedback 
 
     // Protein recommendation for muscle gain
     if (healthGoals.includes('muscle_gain')) {
+        const proteinPerKg = (macros.protein / weight).toFixed(1);
         recommendations.push({
             category: 'Protein',
-            suggestion: `Aim for ${macros.protein}g of protein daily, spread across your meals. Include protein-rich foods like dal, paneer, eggs, and soya chunks`,
+            suggestion: `Aim for ${macros.protein}g of protein daily (${proteinPerKg}g per kg of body weight), spread across your meals. Student athletes need 1.2-2.0g/kg daily. Include protein-rich foods like dal, paneer, eggs, and soya chunks`,
+            priority: 'high'
+        });
+    } else if (activityLevel === 'active' || activityLevel === 'very_active') {
+        // General protein recommendation for active individuals
+        const proteinPerKg = (macros.protein / weight).toFixed(1);
+        recommendations.push({
+            category: 'Protein',
+            suggestion: `As an active individual, aim for ${macros.protein}g of protein daily (${proteinPerKg}g per kg of body weight). Student athletes need 1.2-2.0g/kg to support recovery and performance. Include protein-rich foods like dal, paneer, eggs, and soya chunks`,
             priority: 'high'
         });
     }
